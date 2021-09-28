@@ -11,4 +11,4 @@ print(f'The area of the rectangle is: {rectangle_area:.2f}')
 
 circle = float(input('What is the radius of the circle?: '))
 circle_area = circle ** 2 * math.pi
-print(f'The area of the circle is: {circle_area:.2f}')
+print(f'The area of the circle is: {circle_area:.2f} ')
