@@ -10,6 +10,8 @@ if second_rider_formatted == 'yes':
 
     if height_rider1 < 36 or height_rider2 < 36:
         msg = 'Sorry, you may not ride'
+    elif age_rider1 >= 12 and age_rider2 >= 12 and height_rider1 >= 52 and height_rider2 >= 52:
+        msg = 'Welcome to the ride. Please be safe and have fun!'
     else:
         if age_rider1 >= 18 or age_rider2 >= 18:
             msg = 'Welcome to the ride. Please be safe and have fun!'
