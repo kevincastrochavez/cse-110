@@ -1,3 +1,4 @@
+print('')
 print('Welcome to the Shopping Cart Program!')
 
 items = []
@@ -37,7 +38,6 @@ def option2():
 option_number = options()
 
 while option_number != 5:
-    options()
     option_number = options()
 
 print('Thank you. Goodbye')
