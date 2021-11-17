@@ -26,7 +26,7 @@ highest_balance = max(balances)
 
 print('')
 print(f'Total: ${total}')
-print(f'Average" ${average:.2f}')
+print(f'Average: ${average:.2f}')
 print(f'Highest balance: savings - ${highest_balance}')
 
 update_account = 'yes'
