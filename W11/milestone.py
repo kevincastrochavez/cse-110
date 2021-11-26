@@ -12,6 +12,9 @@ with open("life-expectancy.csv") as life_file:
     max_overall_life = 0
     max_overall_country = ""
     max_overall_year = 0
+    min_overall_life = 150
+    min_overall_country = ""
+    min_overall_year = 3000
 
     for item in data_set:
         country = item[0] 
@@ -23,10 +26,14 @@ with open("life-expectancy.csv") as life_file:
             max_overall_country = country
             max_overall_year = year
 
-    print(max_overall_country)
-    print(max_overall_life)
-    print(max_overall_year)
+        if years_expected < min_overall_life:
+            min_overall_life = years_expected
+            min_overall_country = country
+            min_overall_year = year
 
+    print(f'The overall max life expectancy is: {max_overall_life} from {max_overall_country} in {max_overall_year}')
+    print(f'The overall min life expectancy is: {min_overall_life} from {min_overall_country} in {min_overall_year}')
+    
     # for list in data_set:
     #     life_time = list[3]
     #     country = list[0]
