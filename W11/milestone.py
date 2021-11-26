@@ -1,11 +1,48 @@
 with open("life-expectancy.csv") as life_file:
     next(life_file)
 
-    life_expectancy = []
+    data_set = []
+    year_user = int(input('Enter the year of interest: '))
+    print('')
     
     for line in life_file:
-        life_expectancy.append(line.split(',')[3])
+        clean_line = line.strip()
+        data_set.append(clean_line.split(','))
 
+    max_overall_life = 0
+    max_overall_country = ""
+    max_overall_year = 0
 
-    print(f'Highest life expectancy: {max(life_expectancy)}')
-    print(f'Lowest life expectancy: {min(life_expectancy)}')
+    for item in data_set:
+        country = item[0] 
+        year = item[2]
+        years_expected = float(item[3])
+
+        if years_expected > max_overall_life:
+            max_overall_life = years_expected
+            max_overall_country = country
+            max_overall_year = year
+
+    print(max_overall_country)
+    print(max_overall_life)
+    print(max_overall_year)
+
+    # for list in data_set:
+    #     life_time = list[3]
+    #     country = list[0]
+
+    #     if int(list[2]) == year:
+
+# max_price = -1
+# max_product = "" # It doesn't matter what you set this to, it just needs to be declared
+
+# for item in shopping_cart:
+#     product_name = item[0] # Product name is the first part
+#     price = item[1] 
+
+#     if price > max_price:
+#         # This is the new max
+#         max_price = price
+
+#         # Also save this product name as the max product
+#         max_product = product_name
