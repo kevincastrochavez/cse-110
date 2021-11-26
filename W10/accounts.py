@@ -22,7 +22,7 @@ for item in range(0, len(bank_accounts)):
 
 total = reduce(lambda a,b: a + b, balances)
 average = total / len(balances)
-highest_balance = max(balances)
+highest_balance = max(balances) 
 
 print('')
 print(f'Total: ${total}')
