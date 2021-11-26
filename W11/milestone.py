@@ -1,5 +1,3 @@
-from functools import reduce
-
 with open("life-expectancy.csv") as life_file:
     next(life_file)
 
@@ -7,13 +5,6 @@ with open("life-expectancy.csv") as life_file:
     life_expectancy_sum = 0
     life_expectancy_length = 0
     year_user = int(input('Enter the year of interest: '))
-    print('')
-    
-    for line in life_file:
-        clean_line = line.strip()
-        data_set.append(clean_line.split(','))
-        life_expectancy_sum += float(clean_line.split(',')[3])
-        life_expectancy_length += 1
 
     max_overall_life = 0
     max_overall_country = ""
@@ -21,12 +12,14 @@ with open("life-expectancy.csv") as life_file:
     min_overall_life = 150
     min_overall_country = ""
     min_overall_year = 3000
-
-    average_life = life_expectancy_sum / life_expectancy_length
+    
+    for line in life_file:
+        clean_line = line.strip()
+        data_set.append(clean_line.split(','))
 
     for item in data_set:
         country = item[0] 
-        year = item[2]
+        year = int(item[2])
         years_expected = float(item[3])
 
         if years_expected > max_overall_life:
@@ -38,7 +31,15 @@ with open("life-expectancy.csv") as life_file:
             min_overall_life = years_expected
             min_overall_country = country
             min_overall_year = year
+        
+        if year == year_user:
+            life_expectancy_length += 1
+            life_expectancy_sum += years_expected
+    
 
+    average_life = life_expectancy_sum / life_expectancy_length
+
+    print('')
     print(f'The overall max life expectancy is: {max_overall_life} from {max_overall_country} in {max_overall_year}')
     print(f'The overall min life expectancy is: {min_overall_life} from {min_overall_country} in {min_overall_year}')
 
