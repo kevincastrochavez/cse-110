@@ -57,8 +57,9 @@ with open("life-expectancy.csv") as life_file:
     print(f'The overall min life expectancy is: {min_overall_life} from {min_overall_country} in {min_overall_year}')
 
     print('')
-    print(f'For the year {year_user}')
+    print(f'For the year {year_user}:')
     print(f'The average life expectancy across all countries was {average_life:.2f}')
     print(f'The max life expectancy was in {max_overall_country_per_year} with {max_overall_life_per_year}')
     print(f'The min life expectancy was in {min_overall_country_per_year} with {min_overall_life_per_year}')
+    print('')
     
