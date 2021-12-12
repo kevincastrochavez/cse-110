@@ -10,7 +10,6 @@ else:
 
 def get_wind_chill(speed):
     wind_chill = 35.74 + (0.6215 * final_temperature) - (35.75 * (speed ** 0.16)) + (0.4275 * final_temperature * (speed ** 0.16))
-                # 35.74 + 0.6215T -                     35.75(V0.16) +              0.4275T(V0.16)
     return wind_chill
 
 for num in range(1, 13):
